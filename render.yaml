@@ -11,51 +11,47 @@ services:
   - type: web
     name: curebot-api
     env: python
-    region: oregon # e.g., oregon, frankfurt
-    plan: free # Can be changed to a paid instance for more resources
+    region: oregon
+    plan: free
     rootDir: health-bot
     buildCommand: |
       pip install --upgrade pip
       pip install -r requirements.txt
     startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
-    healthCheckPath: /health # Add a health check endpoint to your FastAPI for better reliability
+    healthCheckPath: /health
     envVars:
       - key: PYTHON_VERSION
-        value: 3.11 # Specify a Python version
+        value: 3.11
       - key: LLM_PROVIDER
         value: hf
       - key: HUGGING_FACE_HUB_TOKEN
         sync: false # Set this in the Render dashboard
       - key: JWT_SECRET
         sync: false # Set this in the Render dashboard
-      # Optional OCR/STT secrets (set in dashboard if used)
       - key: TESSERACT_CMD
         sync: false
       - key: VOSK_MODEL_DIR
         sync: false
-      # Optional: Path for vector store (if not using a managed DB)
       - key: CHROMA_DIR
         value: ./chroma
 
   # -------------------------------------
   # Frontend (Vite / React) as a Static Site
   # -------------------------------------
-  - type: static
+  - type: static_site  # CORRECTED: Was "static", now "static_site"
     name: curebot-web
-    region: oregon # Should be the same region as the API for low latency
+    region: oregon
     plan: free
     rootDir: curebot-hug-design
     buildCommand: |
       npm install
       npm run build
     publishPath: dist
-    # Rewrite all requests to index.html for client-side routing (e.g., React Router)
     routes:
       - type: rewrite
         source: /*
         destination: /index.html
     envVars:
-      # This automatically injects the backend URL into the frontend build process
       - key: VITE_API_BASE_URL
         fromService:
           type: web
@@ -65,9 +61,6 @@ services:
 # -------------------------------------
 # Optional: Persistent Disk Storage
 # -------------------------------------
-# Uncomment the following lines if your API needs to store user uploads or other files persistently.
-# This creates a 1GB disk and mounts it to the specified path in your backend service.
-#
 # disks:
 #   - name: curebot-uploads
 #     mountPath: /opt/render/project/src/health-bot/uploads
