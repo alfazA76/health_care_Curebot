@@ -35,15 +35,16 @@ services:
         value: ./chroma
 
   # -----------------------------
-  # Frontend (Vite / React) as Static Site
+  # Frontend (Vite / React) as Node Web Service
   # -----------------------------
-  - type: static_site
+  - type: web
     name: curebot-web
+    env: node
     rootDir: curebot-hug-design
     buildCommand: |
       npm ci
       npm run build
-    publishPath: dist
+    startCommand: npx serve -s dist -l $PORT
     plan: free
     region: oregon
     envVars:
