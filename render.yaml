@@ -47,14 +47,8 @@ services:
     startCommand: npx serve -s dist -l $PORT
     plan: free
     region: oregon
-    envVars:
-      # Frontend must call the backend. This binds to the backend's public URL.
-      - key: VITE_API_BASE_URL
-        fromService:
-          type: web
-          name: curebot-api
-          property: url
-      # If you later host the backend on a custom domain, update this value in the dashboard instead.
+    # NOTE: Set VITE_API_BASE_URL manually in the Render dashboard to the public URL of curebot-api,
+    # e.g. https://curebot-api.onrender.com.
 
 # Optionally, add a persistent disk for uploads if your API stores files locally.
 # Uncomment to enable and mount at /opt/render/project/src/health-bot/uploads
