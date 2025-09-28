@@ -1,0 +1,64 @@
+# Render Blueprint for CureBot (Backend: FastAPI, Frontend: Vite)
+# Docs: https://render.com/docs/blueprint-spec
+
+services:
+  # -----------------------------
+  # Backend API (FastAPI / Uvicorn)
+  # -----------------------------
+  - type: web
+    name: curebot-api
+    env: python
+    rootDir: health-bot
+    buildCommand: |
+      pip install --upgrade pip
+      pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    plan: free
+    region: oregon
+    envVars:
+      # IMPORTANT: Set your HF token in the Render dashboard after deployment.
+      - key: LLM_PROVIDER
+        value: hf
+      - key: HUGGING_FACE_HUB_TOKEN
+        sync: false
+      # Optional OCR/STT
+      - key: TESSERACT_CMD
+        sync: false
+      - key: VOSK_MODEL_DIR
+        sync: false
+      # App secrets (set in dashboard)
+      - key: JWT_SECRET
+        sync: false
+      # Optional: Chroma dir (if used)
+      - key: CHROMA_DIR
+        value: ./chroma
+
+  # -----------------------------
+  # Frontend (Vite / React) as Static Site
+  # -----------------------------
+  - type: static_site
+    name: curebot-web
+    rootDir: curebot-hug-design
+    buildCommand: |
+      npm ci
+      npm run build
+    publishPath: dist
+    plan: free
+    region: oregon
+    envVars:
+      # Frontend must call the backend. This binds to the backend's public URL.
+      - key: VITE_API_BASE_URL
+        fromService:
+          type: web
+          name: curebot-api
+          property: url
+      # If you later host the backend on a custom domain, update this value in the dashboard instead.
+
+# Optionally, add a persistent disk for uploads if your API stores files locally.
+# Uncomment to enable and mount at /opt/render/project/src/health-bot/uploads
+# disks:
+#   - name: curebot-uploads
+#     mountPath: /opt/render/project/src/health-bot/uploads
+#     sizeGB: 1
+#     serviceNames:
+#       - curebot-api
