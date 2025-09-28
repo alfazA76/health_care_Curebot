@@ -1,0 +1,4 @@
+COVID-19 is a respiratory viral illness.
+Symptoms: fever, cough, sore throat, loss of taste/smell, fatigue, dyspnea.
+Prevention: vaccination, masks in high-risk settings, hand hygiene, ventilation.
+Urgent signs: difficulty breathing, persistent chest pain, confusion, cyanosis.

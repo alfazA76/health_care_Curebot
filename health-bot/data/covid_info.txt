@@ -1,0 +1,10 @@
+COVID-19 (Coronavirus Disease) is caused by the SARS-CoV-2 virus and primarily spreads through respiratory droplets and aerosols. Key points:
+- Symptoms: fever, cough, sore throat, shortness of breath, fatigue, loss of taste or smell, headache, muscle aches, congestion, nausea/diarrhea. Severity ranges from mild to critical.
+- Incubation: typically 2–5 days.
+- High-risk groups: older adults, people with chronic conditions (e.g., heart disease, diabetes), immunocompromised individuals, and pregnant persons.
+- Prevention: up-to-date vaccination, well-fitting masks in crowded/poorly ventilated spaces, hand hygiene, ventilation, testing when symptomatic or after exposure, and staying home if ill.
+- Testing: rapid antigen tests detect higher viral loads (use early and repeat if negative but symptomatic); PCR is more sensitive.
+- Isolation guidance may vary by region; generally isolate if fever or significant symptoms are present, and until symptoms improve.
+- Complications: pneumonia, blood clots, myocarditis, long COVID (persistent fatigue, brain fog, dysautonomia, etc.).
+- Treatment: supportive care for mild cases; antivirals (as available in your region) are most effective when started early for high-risk patients. Seek urgent care for breathing difficulty, persistent chest pain, confusion, bluish lips/face, or low oxygen saturation.
+- Vaccination reduces risk of severe disease, hospitalization, and death.

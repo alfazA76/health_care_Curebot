@@ -1,0 +1,29 @@
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pytest_cache/
+
+# Virtual envs
+venv/
+.env/
+.venv/
+
+# Local data/indexes/uploads
+vecstore/
+chroma/
+uploads/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Logs
+logs/
+*.log
+
+# Local SQLite db (keep if you want to ship it; otherwise ignore for smaller zips)
+health.db

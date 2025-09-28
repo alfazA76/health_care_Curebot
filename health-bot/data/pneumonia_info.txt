@@ -1,0 +1,8 @@
+Pneumonia is an infection of the lungs that can be caused by bacteria, viruses, or fungi. Key points:
+- Symptoms: cough (often with phlegm), fever, chills, shortness of breath, chest pain, fatigue; older adults may have confusion or low body temperature.
+- Transmission: depends on cause; many cases spread via respiratory droplets and close contact.
+- Risk factors: very young or older age, chronic lung or heart disease, diabetes, smoking, immunosuppression.
+- Prevention: vaccination where appropriate (e.g., pneumococcal, influenza, COVID-19), smoking cessation, hand hygiene, and avoiding exposure to sick contacts when possible.
+- Diagnosis: clinical evaluation, chest imaging, and sometimes sputum/blood tests.
+- Treatment: depends on cause and severity. Viral pneumonias may be supportive care; bacterial pneumonias often need antibiotics. Seek urgent care for difficulty breathing, persistent high fever, bluish lips/face, confusion, or oxygen saturation below normal.
+- Recovery: rest, fluids, and gradual return to activity. Follow up if symptoms do not improve within a few days or worsen.

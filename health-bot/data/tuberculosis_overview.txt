@@ -1,0 +1,4 @@
+Tuberculosis (TB) is a bacterial infection spread through the air.
+Symptoms: cough >2 weeks, fever, night sweats, weight loss, fatigue, hemoptysis.
+Diagnosis: sputum tests, chest imaging.
+Treatment: multi-drug therapy for months; adherence is essential. Screen close contacts.

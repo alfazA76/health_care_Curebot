@@ -1,0 +1,5 @@
+Dengue is a viral illness spread by Aedes mosquitoes.
+Symptoms: high fever, severe headache, retro-orbital pain, muscle/joint pains, rash, mild bleeding.
+Warning signs: severe abdominal pain, persistent vomiting, bleeding, lethargy, restlessness, sudden platelet drop.
+Care: hydration and monitoring. Avoid NSAIDs unless advised by a clinician due to bleeding risk.
+Prevention: remove standing water, use repellents, wear long sleeves, window screens.
