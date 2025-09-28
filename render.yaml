@@ -12,7 +12,7 @@ services:
     buildCommand: |
       pip install --upgrade pip
       pip install -r requirements.txt.txt
-    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    startCommand: gunocorn main:app --host 0.0.0.0 --port $PORT
     plan: free
     region: oregon
     envVars:
